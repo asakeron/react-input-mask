@@ -308,6 +308,8 @@ InputMask.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onMouseDown: PropTypes.func,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string,
 };
 
 export default InputMask;
