@@ -3,7 +3,6 @@ import { terser } from "rollup-plugin-terser";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
-import protoToAssign from "./rollup.proto-to-assign.plugin";
 
 const input = "./src/index.js";
 
@@ -17,20 +16,15 @@ const plugins = [
   babel({ babelHelpers: "bundled" }),
   resolve(),
   commonjs(),
-  protoToAssign(),
 ];
 const minifiedPlugins = [
   ...plugins,
   replace({
     "process.env.NODE_ENV": '"production"',
+    preventAssignment: true
   }),
   babel({
     babelHelpers: "bundled",
-    babelrc: false,
-    plugins: [
-      "babel-plugin-minify-dead-code-elimination",
-      "babel-plugin-transform-react-remove-prop-types",
-    ],
   }),
   terser({
     compress: { warnings: false },
@@ -51,6 +45,7 @@ export default [
       ...plugins,
       replace({
         "process.env.NODE_ENV": '"development"',
+         preventAssignment: true
       }),
     ],
   },
