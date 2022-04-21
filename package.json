@@ -5,8 +5,8 @@
   "license": "MIT",
   "author": "Nikita Lobachev <sanniassin@gmail.com>",
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
@@ -41,8 +41,8 @@
     "mocha": "^9.2.2",
     "prettier": "^2.6.2",
     "puppeteer": "^13.6.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "rollup": "^2.70.2",
     "rollup-plugin-terser": "^7.0.2",
     "webpack": "^5.72.0",

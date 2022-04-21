@@ -1,19 +1,19 @@
 /* eslint-disable no-console */
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useState, StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import InputMask from "../src";
 
-function Input() {
+const Input = () => {
   const [value, setValue] = useState("");
 
-  function onChange(event) {
+  const onChange = (event) => {
     setValue(event.target.value);
   }
 
   return <InputMask mask="99/99/9999" value={value} onChange={onChange} />;
 }
 
-function escapeHtml(unsafe) {
+const escapeHtml = (unsafe) => {
   return `${unsafe}`
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -29,4 +29,6 @@ console.log = (text, ...rest) => {
   consoleDiv.innerHTML = `${escapeHtml(text)}<br/>${consoleDiv.innerHTML}`;
 };
 
-ReactDOM.render(<Input />, document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
+
+root.render(<StrictMode><Input /></StrictMode>);
