@@ -4,7 +4,7 @@ import { defer, cancelDefer } from "./utils/defer";
 import {
   setInputSelection,
   getInputSelection,
-  isInputFocused
+  isInputFocused,
 } from "./utils/input";
 import { isDOMElement } from "./utils/helpers";
 
@@ -82,7 +82,7 @@ function useSelection(inputRef, isMasked) {
   }, []);
 
   const setSelection = useCallback(
-    selection => {
+    (selection) => {
       const input = getInputElement();
 
       // Don't change selection on unfocused input
@@ -142,7 +142,7 @@ function useValue(inputRef, initialValue) {
   }, []);
 
   const setValue = useCallback(
-    newValue => {
+    (newValue) => {
       valueRef.current = newValue;
 
       const input = getInputElement();
@@ -156,7 +156,7 @@ function useValue(inputRef, initialValue) {
   return {
     getValue,
     getLastValue,
-    setValue
+    setValue,
   };
 }
 
@@ -171,14 +171,14 @@ export function useInputState(initialValue, isMasked) {
   function getLastInputState() {
     return {
       value: getLastValue(),
-      selection: getLastSelection()
+      selection: getLastSelection(),
     };
   }
 
   function getInputState() {
     return {
       value: getValue(),
-      selection: getSelection()
+      selection: getSelection(),
     };
   }
 
@@ -191,7 +191,7 @@ export function useInputState(initialValue, isMasked) {
     inputRef,
     getInputState,
     getLastInputState,
-    setInputState
+    setInputState,
   };
 }
 

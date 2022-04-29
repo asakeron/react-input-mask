@@ -1,69 +1,31 @@
 {
   "private": true,
-  "name": "react-input-mask",
-  "version": "0.0.0-alpha.0",
-  "license": "MIT",
-  "author": "Nikita Lobachev <sanniassin@gmail.com>",
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.9",
     "@babel/eslint-parser": "^7.17.0",
-    "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
-    "@babel/plugin-transform-proto-to-assign": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@babel/register": "^7.17.7",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^21.1.0",
-    "@rollup/plugin-node-resolve": "^13.2.1",
-    "@rollup/plugin-replace": "^4.0.0",
-    "babel-loader": "^8.2.5",
-    "babel-plugin-dev-expression": "^0.2.3",
-    "babel-plugin-minify-dead-code-elimination": "^0.5.1",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "chai": "^4.3.6",
-    "cross-env": "^7.0.3",
     "eslint": "^8.13.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "html-webpack-plugin": "^5.5.0",
-    "karma": "^6.3.19",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-mocha": "^2.0.1",
-    "karma-webpack": "^5.0.0",
-    "mocha": "^9.2.2",
     "prettier": "^2.6.2",
-    "puppeteer": "^13.6.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "rollup": "^2.70.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "webpack": "^5.72.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.8.1"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
-  "main": "index.js",
-  "files": [
-    "lib",
-    "dist"
-  ],
   "scripts": {
-    "build": "cross-env BABEL_ENV=rollup rollup -c",
-    "start": "cross-env BABEL_ENV=test NODE_ENV=development webpack-dev-server",
-    "test:input": "cross-env NODE_ENV=test BABEL_ENV=test karma start",
-    "test:server-render": "cross-env BABEL_ENV=test mocha --require @babel/register ./tests/server-render",
-    "test:build": "cross-env BABEL_ENV=test mocha --require @babel/register ./tests/build"
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/",
+    "lint": "eslint src/"
   },
   "dependencies": {
     "invariant": "^2.2.4",
     "prop-types": "^15.8.1",
     "warning": "^4.0.3"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
